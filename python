@@ -1,0 +1,101 @@
+from nltk.chat.util import Chat, reflections
+pairs = [
+    [
+        r"(.*)my name is (.*)",
+        ["Hello %2, How are you today ?",]
+    ],
+    [
+        r"(.*)help(.*) ",
+        ["I can help you ",]
+    ],
+    [
+        r"What (.*) color ?",
+        ["I'm a robot, so I don't have preferences like humans do."]
+    ],
+
+    [
+        r"Do you have any siblings ?",
+        ["As a chatbot, I don't have a family or siblings."]
+    ],
+
+    [
+        r"What is the meaning of life ?",
+        ["The meaning of life can vary for each individual. It's a philosophical question without a single definitive answer."]
+    ],
+    [
+        r"how are you?",
+        ["I'm doing very well", "i am great !"]
+    ],
+    [
+        r"sorry (.*)",
+        ["Its alright","Its OK, never mind that",]
+    ],
+    [
+        r"i'm (.*) (good|well|okay|ok)",
+        ["Nice to hear that","Alright, great !",]
+    ],
+    [
+        r"(hi|hey|hello|hola|holla)(.*)",
+        ["Hello", "Hey there",]
+    ],
+    [
+        r"what (.*) want ?",
+        ["Make me an offer I can't refuse",]
+        
+    ],
+    [
+        r"(.*) (location|city) ?",
+        ['SRM Kattankulathur, Tamil Nadu , India',]
+    ],
+    [
+        r"What (.*) (abilities|do) ?",
+        ["I can answer questions, provide information, and have general conversations."]
+    ],
+    [
+        r"(.*)weather (.*)",
+        ["Maximum temperature today was 35°C","It's been Humid with periods of sun",]
+    ],
+    [
+        r"(.*) (movies) ?",
+        ["Top 3 english movies of all time are: \n1.The Godfather(1972)\n2.The Shawshank Redemption(1994) \n3.The Dark Knight(2008) ",]
+    ],
+    [
+        r"how (.*) health (.*)",
+        ["Health is very important, but I am a computer, so I don't need to worry about my health ",]
+    ],
+    [
+        r"(.*)(sports|game|sport) ?",
+        ["I'm a very big fan of Cricket, I love IPL these days, I think CSK might win the trophy again!",]
+    ],
+    [
+        r"who (.*) (Cricketer|Batsman)?",
+        ["Thala MS Dhoni! "]
+    ],
+    [
+        r"quit",
+        ["Bye for now. See you soon :) ","It was nice talking to you. See you soon :)"]
+    ],
+    [
+        r"(.*)",
+        ['That is nice to hear']
+    ],
+]
+reflections = {'i am': 'you are',
+'i was': 'you were',
+'i': 'you',
+"i'm": 'you are',
+"i'd": 'you would',
+"i've": 'you have',
+"i'll": 'you will',
+'my': 'your',
+'you are': 'I am',
+'you were': 'I was',
+"you've": 'I have',
+"you'll": 'I will',
+'your': 'my',
+'yours': 'mine',
+'you': 'me',
+'me': 'you'}
+print("Hi, I'm a bot and I like to chat\nPlease type lowercase English language to start a conversation.\nNOTE: Type quit to leave ")
+chat = Chat(pairs, reflections)
+chat.converse()
